@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField  from '@material-ui/core/TextField';
 import Switch from '@material-ui/core/Switch';
+import  FormControlLabel  from '@material-ui/core/FormControlLabel';
 
 
 function FormularioCadastro(){
@@ -15,10 +16,10 @@ function FormularioCadastro(){
             <TextField id="cpf" label="CPF" variant="outlined" fullWidth margin="normal"/>
 
 
-
-            <Switch name="Promoções" defaultChecked color="primary"/>
-
-            <Switch name="Novidades" defaultChecked color="primary"/>
+            <FormControlLabel label="Promoções" control={<Switch name="promocoes" defaultChecked color="primary"/>} />
+            
+            <FormControlLabel label="Novidades" control={<Switch name="novidades" defaultChecked color="primary"/>}/>
+            
             
             <Button variant="contained" color="primary">
                 Cadastrar
