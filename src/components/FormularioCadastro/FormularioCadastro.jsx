@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Switch from "@material-ui/core/Switch";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
-function FormularioCadastro(props) {
+function FormularioCadastro({aoEnviar, validarCPF}) {
   
     const [nome, setNome] = useState("");
     const [sobrenome, setSobrenome] = useState("");
@@ -12,10 +12,12 @@ function FormularioCadastro(props) {
     const [promocoes, setPromocoes ] = useState(false)
     const [ novidades, setNovidades] = useState(false);
 
+    const [erros, setErros] = useState({cpf:{valido: true, texto:""}});
+
   return (
     <form onSubmit={(event) =>{
         event.preventDefault();
-        props.aoEnviar({nome, sobrenome, cpf, promocoes, novidades}); 
+        aoEnviar({nome, sobrenome, cpf, promocoes, novidades}); 
     }}>
       <TextField
       value={nome}
@@ -46,15 +48,17 @@ function FormularioCadastro(props) {
       value={cpf}
         onChange={(event) =>{
 
-          let cpfTemporario = event.target.value;
-
-          if(cpfTemporario.length >=11){
-            cpfTemporario = cpfTemporario.substr(0,11)
-          }
-
-          setCpf(cpfTemporario);
-
+          setCpf(event.target.value);
         }}
+
+        onBlur={(event) =>{
+          const ehValido = validarCPF(cpf)
+          setErros({cpf:ehValido})
+        }}
+
+        error={!erros.cpf.valido}
+        helperText={erros.cpf.texto}
+
         id="cpf"
         label="CPF"
         variant="outlined"
