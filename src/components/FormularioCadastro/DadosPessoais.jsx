@@ -59,6 +59,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
 
         id="cpf"
         label="CPF"
+        type="number"
         variant="outlined"
         fullWidth
         margin="normal"
