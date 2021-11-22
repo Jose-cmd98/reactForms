@@ -15,21 +15,7 @@ function FormularioCadastro({aoEnviar, validarCPF}) {
 
   function proximo(){
     setEtapaAtual(etapaAtual+1);
-  }
-
-
-  // function formularioAtual(etapa){
-  //   switch (etapa) {
-  //     case 0:
-  //       return <DadosUsuario aoEnviar={proximo}/>;
-  //     case 1:
-  //       return <DadosPessoais aoEnviar={proximo} validarCPF={validarCPF}/>;
-  //     case 2:
-  //       return <DadosEntrega aoEnvair={aoEnviar}/>;
-  //     default:
-  //       return <h1>Erro ao Enviar Formulario!!</h1>
-  //   }
-  // }
+  } //Muda o estado do Component 
 
     return (
       <>
