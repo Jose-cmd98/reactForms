@@ -25,6 +25,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
 
         id="nome"
         label="Nome"
+        required
         variant="outlined"
         fullWidth
         margin="normal"
@@ -37,6 +38,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
         }}
         id="sobrenome"
         label="Sobrenome"
+        required
         variant="outlined"
         fullWidth
         margin="normal"
@@ -60,6 +62,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
         id="cpf"
         label="CPF"
         type="number"
+        required
         variant="outlined"
         fullWidth
         margin="normal"
@@ -89,7 +92,7 @@ function DadosPessoais({aoEnviar, validarCPF}) {
       />
 
       <Button type="submit" variant="contained" color="primary">
-        Cadastrar
+        Proximo
       </Button>
     </form>
   );
