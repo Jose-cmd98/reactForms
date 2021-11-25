@@ -15,4 +15,12 @@ function validarSenha(senha){
     }
   }
 
-export {validarCPF,validarSenha};
+function validarNome(nome){
+  if(nome.length <1 || nome.length > 72){
+    return{valido: false, texto:"Por favor Verifique nome."}
+  }else{
+    return {valido:true, texto:""}
+  }
+}
+
+export {validarCPF,validarSenha, validarNome};
