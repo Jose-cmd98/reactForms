@@ -22,5 +22,5 @@ function validarNome(nome){
     return {valido:true, texto:""}
   }
 }
-
+//model de validacao
 export {validarCPF,validarSenha, validarNome};
