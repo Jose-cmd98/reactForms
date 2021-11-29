@@ -14,7 +14,7 @@ function validarSenha(senha){
       return{valido:true, texto:""}
     }
   }
-
+//add nova validação***
 function validarNome(nome){
   if(nome.length <1 || nome.length > 72){
     return{valido: false, texto:"Por favor Verifique nome."}
